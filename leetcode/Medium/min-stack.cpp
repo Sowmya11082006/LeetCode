@@ -4,35 +4,47 @@
 // Language: cpp
 // Verdict: Accepted
 // URL: https://leetcode.com/problems/min-stack/
-// Solved on: 2026-10-15T01:00:19.666Z
+// Solved on: 2026-10-15T02:42:23.375Z
 
 class MinStack {
 public:
-    stack<pair<int,int>> s;
-
+stack<long long int> s;
+long long int minVal;
     MinStack() {
         
     }
     
     void push(int value) {
         if(s.empty()){
-            s.push({value,value});
+            s.push(value);
+            minVal = value;
         }else{
-            int minVal = min(value , s.top().second);
-            s.push({value,minVal});
+        if(value < minVal){
+            s.push((long long int) 2*value - minVal);
+            minVal = value;
+        }else{
+            s.push(value);
         }
+        }
+
     }
     
     void pop() {
+        if(s.top() < minVal){
+            minVal = 2*minVal - s.top();
+        }
         s.pop();
     }
-    
     int top() {
-        return s.top().first;
+        if(s.top()<minVal){
+            return minVal;
+        }else{
+            return s.top();
+        }
     }
     
     int getMin() {
-        return s.top().second;
+        return minVal;
     }
 };
 
