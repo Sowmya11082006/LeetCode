@@ -1,11 +1,10 @@
 // Problem: Next Greater Element II
 // Platform: leetcode
-// Contest: Medium
 // Rating/Difficulty: Medium
-// Language: C++17
+// Language: cpp
 // Verdict: Accepted
-// URL: https://leetcode.com/problems/next-greater-element-ii/submissions/2174309215/
-// Solved on: 2026-10-17T05:42:33.675Z
+// URL: https://leetcode.com/problems/next-greater-element-ii/
+// Solved on: 2026-10-24T01:41:40.299Z
 
 class Solution {
 public:
